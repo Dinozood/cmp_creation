@@ -1,0 +1,8 @@
+asd
+asd
+#include <cstring>
+New line
+New line
+asd
+asd
+asd

@@ -1,0 +1,31 @@
+version: "3.7"
+services:
+  mps_block:
+    image: mps_image
+    container_name: mps
+    ports:
+      - "1337:8080"
+    build:
+      context: ./mps_dir
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+  wallet_block:
+    image: wallet_image
+    container_name: wallet
+    ports:
+      - "1331:8080"
+    build:
+      context: ./wallet_dir
+    stdin_open: true # docker run -i
+    tty: true        # docker run -t
+  hardhat_block:
+    image: hardhat_image
+    container_name: hatdhat
+    ports:
+      - "8546:8545"
+    build:
+      context: ./hardhat_dir
+    env_file:
+      - ./hardhat_dir/.env
+
+
